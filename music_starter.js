@@ -14,6 +14,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   fill (0) //black 
   ellipse (400, 200, circle2, circle2);
 
+  let circle5 = map(bass, 0, 150, 100, 270)
+  fill (0, 70)
+  stroke(255)
+  strokeWeight(3)
+  ellipse (400, 200, circle5, circle5)
+
   let ellipse1 = map(vocal, 0, 100, 50, 200)
   fill (255, 0, 0) //red 
   ellipse (260, 400, 200, ellipse1);

@@ -1,10 +1,22 @@
+let img
+let firstRun = true 
+
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(20)
+  
+if (firstRun) {
+img = loadImage ('image.jpeg')
+firstRun = false 
+}
+
+
+  background(img)
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
+
+  
 
   let circle1 = map(drum, 0, 100, 50, 200)
   fill (255) //white 
@@ -27,6 +39,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   let circle3 = map(other, 0, 50, 100, 250)
   fill (0, 0, 255) //blue 
   ellipse (500, 500, circle3, circle3)
+
+
+
 
 //   let circle4 = map(words, 0, 150, 150, 200)
 //  fill (255, 70)

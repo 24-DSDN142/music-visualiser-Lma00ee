@@ -16,52 +16,77 @@ firstRun = false
   rectMode(CENTER)
   textSize(24);
 
-  let circle1 = map(drum, 0, 100, 200, 700)
-  fill (255, 200) //white 
-  ellipse (1350, 750, circle1, circle1);
-
-  let circle6 = map(drum, 0, 100, 300, 900)
+//bc of opacity, darkest layer first then light?
+//paramertise the varibales by making one circle and adjusting the rest of tehm so i dont have 100... i thinkkkks
+  let circle4 = map(drum, 0, 100, 700, 1250)
   // noFill()
-  fill (255, 150) //white 
-  strokeWeight (5)
-  stroke(255) //white 
-  ellipse (1350, 750, circle6, circle6);
+  // fill (255, 150) //white 
+  // strokeWeight (5)
+  // // stroke(255) //white 
+  // ellipse (1350, 750, circle4, circle4);
+  // noFill()
 
-  let circle7 = map(drum, 0, 100, 600, 1100)
+  fill (255, 150) //white 
+  strokeWeight (40)
+  stroke(161, 29, 179, 100) //white 
+  ellipse (1350, 750, circle4+10, circle4+10);
+
+  fill (255, 150) //white 
+  strokeWeight (20)
+  stroke(161, 29, 179, 210) //white 
+  ellipse (1350, 750, circle4, circle4);
+
+  noFill()
+  // fill (255, 150) //white 
+  strokeWeight (1)
+  stroke(255) //white 
+  ellipse (1350, 750, circle4, circle4);
+  
+
+  let circle3 = map(drum, 0, 100, 600, 1100)
   // noFill()
   fill (255, 150) //white 
   strokeWeight (0)
   stroke(255) //white 
-  ellipse (1350, 750, circle7, circle7);
+  ellipse (1350, 750, circle3, circle3);
 
-  let circle8 = map(drum, 0, 100, 700, 1250)
-  noFill()
-  // fill (255, 150) //white 
-  strokeWeight (5)
-  stroke(255) //white 
-  ellipse (1350, 750, circle8, circle8);
-
-  let circle3 = map(bass, 0, 30, 100, 170)
-  fill (80, 36, 173, 200) //purple
-  stroke (80, 36, 173)
-  ellipse (1350, 750, circle3, circle3)
-
-  let circle5 = map(bass, 0, 40, 150, 310)
-  fill (80, 36, 173, 210) //purple
-  stroke(80, 36, 173, 200)
-  strokeWeight(3)
-  ellipse (1350, 750, circle5, circle5)
-
-  let circle2 = map(other, 0, 50, 100, 150)
-  fill (64, 68, 194, 130) // darkblue
-  stroke (64, 68, 194)
+  let circle2 = map(drum, 0, 100, 300, 900)
+  // noFill()
+  fill (255, 150) //white 
+  // strokeWeight (5)
+  // stroke(255) //white 
   ellipse (1350, 750, circle2, circle2);
 
+  let circle1 = map(drum, 0, 100, 220, 700)
+  fill (255, 200) //white 
+  ellipse (1350, 750, circle1, circle1);
+
+
+  let circle5 = map(bass, 0, 30, 100, 160)
+  fill (80, 36, 173, 210) //purple
+  stroke (80, 36, 173)
+  ellipse (1350, 750, circle5, circle5)
+
+  let circle6 = map(bass, 0, 50, 150, 250)
+  fill (80, 36, 173, 200) //purple
+  stroke(80, 36, 173)
+  strokeWeight(3)
+  ellipse (1350, 750, circle6, circle6)
+
+  let circle7 = map(other, 0, 50, 100, 150)
+  fill (64, 68, 194, 130) // darkblue
+  stroke (64, 68, 194)
+  ellipse (1350, 750, circle7, circle7);
 
   let ellipse1 = map(vocal, 0, 40, 70, 100)
   fill (161, 29, 179, 210) //dark pink 
-  stroke (178, 10, 201, 200)
-  ellipse (1350, 750, ellipse1);
+  stroke (255, 190) //white, transparent 
+  ellipse (1350, 750, ellipse1, 30); //this is just for weird pattern i made, can be normal circle 
+
+  let ellipse2 = map(vocal, 0, 40, 70, 100)
+  fill (161, 29, 179, 210) //dark pink 
+  stroke (255, 190) //white, transparent 
+  ellipse (1350, 750, 30, ellipse2);
 
 
 

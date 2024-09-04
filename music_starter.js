@@ -6,7 +6,7 @@ let firstRun = true
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
 if (firstRun) {
-img = loadImage ('bg img 2.jpg')
+img = loadImage ('bg img3.jpg')
 firstRun = false 
 }
 
@@ -16,32 +16,51 @@ firstRun = false
   rectMode(CENTER)
   textSize(24);
 
-  let circle1 = map(drum, 0, 100, 50, 450)
-  fill (255) //white 
+  let circle1 = map(drum, 0, 100, 200, 700)
+  fill (255, 200) //white 
   ellipse (1350, 750, circle1, circle1);
 
-  let circle6 = map(drum, 0, 100, 100, 600)
-  noFill()
+  let circle6 = map(drum, 0, 100, 300, 900)
+  // noFill()
+  fill (255, 150) //white 
   strokeWeight (5)
   stroke(255) //white 
   ellipse (1350, 750, circle6, circle6);
 
-  let circle3 = map(other, 0, 50, 100, 250)
-  fill (0, 0, 255) //blue 
+  let circle7 = map(drum, 0, 100, 600, 1100)
+  // noFill()
+  fill (255, 150) //white 
+  strokeWeight (0)
+  stroke(255) //white 
+  ellipse (1350, 750, circle7, circle7);
+
+  let circle8 = map(drum, 0, 100, 700, 1250)
+  noFill()
+  // fill (255, 150) //white 
+  strokeWeight (5)
+  stroke(255) //white 
+  ellipse (1350, 750, circle8, circle8);
+
+  let circle3 = map(bass, 0, 30, 100, 170)
+  fill (80, 36, 173, 200) //purple
+  stroke (80, 36, 173)
   ellipse (1350, 750, circle3, circle3)
 
-  let circle2 = map(bass, 0, 100, 50, 320)
-  fill (0) //black 
-  ellipse (1350, 750, circle2, circle2);
-
-  let circle5 = map(bass, 0, 150, 100, 350)
-  fill (0, 70)
-  stroke(255)
+  let circle5 = map(bass, 0, 40, 150, 310)
+  fill (80, 36, 173, 210) //purple
+  stroke(80, 36, 173, 200)
   strokeWeight(3)
   ellipse (1350, 750, circle5, circle5)
 
-  let ellipse1 = map(vocal, 0, 100, 50, 150)
-  fill (255, 0, 0) //red 
+  let circle2 = map(other, 0, 50, 100, 150)
+  fill (64, 68, 194, 130) // darkblue
+  stroke (64, 68, 194)
+  ellipse (1350, 750, circle2, circle2);
+
+
+  let ellipse1 = map(vocal, 0, 40, 70, 100)
+  fill (161, 29, 179, 210) //dark pink 
+  stroke (178, 10, 201, 200)
   ellipse (1350, 750, ellipse1);
 
 

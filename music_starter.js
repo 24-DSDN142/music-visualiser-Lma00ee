@@ -6,6 +6,9 @@ let circleX = [1336, 765] //change to pos
 let drumBeat = [700, 1250, 600, 1100, 300, 900, 220, 700] //number ranges of the beat of drums
 let ranges = [0, 100, 50, 40, 30, 70] //if i array the ranges it'll be difficult to experiment?
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
+let bassBeat = [150, 250, 100, 160]
+let otherBeat = [120, 200]
+let vocalBeat = [80]
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
 if (firstRun) {
@@ -15,6 +18,14 @@ firstRun = false
 
 let drumMap1 = map(drum, ranges[0], ranges[1], drumBeat[0], drumBeat[1])
 let drumMap2 = map(drum, ranges[0], ranges[1], drumBeat[2], drumBeat[3])
+let drumMap3 = map(drum, ranges[0], ranges[1], drumBeat[4], drumBeat[5])
+let drumMap4 = map(drum, ranges[0], ranges[1], drumBeat[6], drumBeat[7])
+let bassMap1 = map(bass, ranges[0], ranges[3], bassBeat[0], bassBeat[1])
+let bassMap2 = map(bass, ranges[0], ranges[4], bassBeat[0], bassBeat[1])
+let otherMap1 = map(other, ranges[0], ranges[2], ranges[1], ranges[1])
+let otherMap2 = map(other, ranges[0], ranges[5], otherBeat[0], otherBeat[1])
+let vocalMap1 = map(vocal, ranges[0], ranges[3], ranges[5], vocalBeat[0])
+
   background(img)
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
@@ -40,12 +51,12 @@ let drumMap2 = map(drum, ranges[0], ranges[1], drumBeat[2], drumBeat[3])
   fill (255, 150) //pink
   strokeWeight (40)
   stroke(161, 29, 179, 150) //pink
-  ellipse (circleX[0], circleX[1], drumMap1, drumMap1);
+  ellipse (circleX[0], circleX[1], drumMap1+10, drumMap1+10);
 
   fill (255, 150) //pink
   strokeWeight (40)
   stroke(161, 29, 179, 150) //pink
-  ellipse (circleX[0], circleX[1], drumMap2, drumMap2);
+  ellipse (circleX[0], circleX[1], drumMap1+90, drumMap1+90);
 
   let circle3 = map(drum, 0, 100, 600, 1100)
   // noFill()
@@ -53,53 +64,53 @@ let drumMap2 = map(drum, ranges[0], ranges[1], drumBeat[2], drumBeat[3])
   // fill (99, 64, 194, 100)
   strokeWeight (0)
   stroke(255) //white 
-  ellipse (circleX[0], circleX[1], circle3, circle3);
+  ellipse (circleX[0], circleX[1], drumMap2, drumMap2);
 
   let circle2 = map(drum, 0, 100, 300, 900)
   // noFill()
   fill (255, 150) //white 
   // strokeWeight (5)
   // stroke(255) //white 
-  ellipse (circleX[0], circleX[1], circle2, circle2);
+  ellipse (circleX[0], circleX[1], drumMap3, drumMap3);
 
   let circle1 = map(drum, 0, 100, 220, 700)
   fill (255, 200) //white 
-  ellipse (circleX[0], circleX[1], circle1, circle1);
+  ellipse (circleX[0], circleX[1], drumMap4, drumMap4);
 
 
   let circle6 = map(bass, 0, 50, 150, 250)
   fill (80, 36, 173, 150) //purple
   // stroke(80, 36, 173)
   // strokeWeight(3)
-  ellipse (circleX[0], circleX[1], circle6, circle6)
+  ellipse (circleX[0], circleX[1], bassMap1, bassMap1)
 
   let circle5 = map(bass, 0, 30, 100, 160)
   fill (80, 36, 173, 150) //purple
   // stroke (80, 36, 173)
-  ellipse (circleX[0], circleX[1], circle5, circle5);
+  ellipse (circleX[0], circleX[1], bassMap2, bassMap2);
   
   let circle8 = map(other, 0, 50, 100, 100)
   fill (74, 45, 189, 100) // dark purple 
   stroke (64, 68, 194)
-  ellipse (circleX[0], circleX[1], circle8, circle8);
+  ellipse (circleX[0], circleX[1], otherMap1, otherMap1);
 
   let circle7 = map(other, 0, 70, 120, 200)
   fill (74, 45, 189, 130) // dark purple
   stroke (64, 68, 194)
-  ellipse (circleX[0], circleX[1], circle7, circle7);
+  ellipse (circleX[0], circleX[1], otherMap2, otherMap2);
 
   //flower/star 
   let ellipse1 = map(vocal, 0, 40, 70, 80)
   fill (161, 29, 179, 180) //dark pink 
   strokeWeight(2)
-  stroke (161, 29, 179) //white, transparent 
-  ellipse (circleX[0], y, ellipse1, 20); //this is just for weird pattern i made, can be normal circle 
+  stroke (161, 29, 179) //dark pink, transparent 
+  ellipse (circleX[0], circleX[1], vocalMap1, 20); //this is just for weird pattern i made, can be normal circle 
 
   let ellipse2 = map(vocal, 0, 40, 70, 80)
   fill (161, 29, 179, 180) //dark pink 
   // strokeWeight(2)
   // stroke (255, 100) //white, transparent 
-  ellipse (circleX[0], circleX[1], 20, ellipse2);
+  ellipse (circleX[0], circleX[1], 20, vocalMap1);
 
   // //circle
   // fill (161, 29, 179, 210) //dark pink 

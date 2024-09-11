@@ -115,7 +115,6 @@ let darkPurple2 = color(74, 45, 189, 130)
   stroke (Magenta) 
   ellipse (circleX[0], circleX[1], 20, vocalMap1);
 
-  
 
   if(counter >= 5897){
 
@@ -156,78 +155,79 @@ let darkPurple2 = color(74, 45, 189, 130)
 
   }
 
-  
+  if (counter > 9961 && 11520) {
+    circleCol = lerpColor(Magenta, darkPurple, map(counter, 100, 300, 0, 1))
+    circleCol2 = lerpColor(lightPurple1, Magenta2, map(counter, 100, 300, 0, 1))
+    circleCol3 = lerpColor(darkPurple1, Magenta2, map(counter, 100, 300, 0, 1))
+    circleCol4 = lerpColor(Magenta1, darkPurple2, map(counter, 100, 300, 0, 1))
 
-//   else if ((counter > 100 || counter < 300)) {
+//reverse opacity layers for strokes outer pink 
+//drums
+//super outer stroke matching ring on image 
+noFill()
+strokeWeight (20)
+stroke(circleCol) 
+ellipse (circleX[0], circleX[1], drumMap1+200, drumMap1+180);
 
-//     // if (counter > 100 || counter < 300) {
-//       circleCol = lerpColor(Magenta, darkPurple, map(counter, 100, 300, 0, 1))
-//       circleCol2 = lerpColor(lightPurple1, Magenta2, map(counter, 100, 300, 0, 1))
-//       circleCol3 = lerpColor(darkPurple1, Magenta2, map(counter, 100, 300, 0, 1))
-//       circleCol4 = lerpColor(Magenta1, darkPurple2, map(counter, 100, 300, 0, 1))
+//magenta colours of main circle 
+noStroke()
+fill (circleCol) 
+strokeWeight(40)
+stroke(circleCol4) 
+ellipse(circleX[0], circleX[1], drumMap1+10, drumMap1+10);
+ellipse(circleX[0], circleX[1], drumMap1+90, drumMap1+90);
 
-//   //reverse opacity layers for strokes outer pink 
-//   //drums
-//  //super outer stroke matching ring on image 
-//   noFill()
-//   strokeWeight (20)
-//   stroke(circleCol) 
-//   ellipse (circleX[0], circleX[1], drumMap1+200, drumMap1+180);
-  
-//   //magenta colours of main circle 
-//   noStroke()
-//   fill (circleCol) 
-//   strokeWeight(40)
-//   stroke(circleCol4) 
-//   ellipse(circleX[0], circleX[1], drumMap1+10, drumMap1+10);
-//   ellipse(circleX[0], circleX[1], drumMap1+90, drumMap1+90);
- 
-//   //purples
-  
-//   fill (circleCol3) 
-//   strokeWeight (0)
-//   ellipse (circleX[0], circleX[1], drumMap2, drumMap2);
+// //purples
 
-//   fill (circleCol3) 
-//   ellipse (circleX[0], circleX[1], drumMap3, drumMap3);
+// fill (circleCol3) 
+// strokeWeight (0)
+// ellipse (circleX[0], circleX[1], drumMap2, drumMap2);
 
-//   fill (circleCol3) 
-//   ellipse (circleX[0], circleX[1], drumMap4, drumMap4);
+// fill (circleCol3) 
+// ellipse (circleX[0], circleX[1], drumMap3, drumMap3);
+
+// fill (circleCol3) 
+// ellipse (circleX[0], circleX[1], drumMap4, drumMap4);
 
 
 // //bass beat circles  
 // //darker purples inner small middle 
-//   fill (circleCol2) 
-//   ellipse (circleX[0], circleX[1], bassMap1, bassMap1)
+// fill (circleCol2) 
+// ellipse (circleX[0], circleX[1], bassMap1, bassMap1)
 
-//   fill (circleCol2) 
-//   ellipse (circleX[0], circleX[1], bassMap2, bassMap2);
-  
+// fill (circleCol2) 
+// ellipse (circleX[0], circleX[1], bassMap2, bassMap2);
+
 // //other beat circles 
-//   fill (circleCol2) 
-//   stroke (64, 68, 194)
-//   ellipse (circleX[0], circleX[1], otherMap1, otherMap1);
+// fill (circleCol2) 
+// stroke (64, 68, 194)
+// ellipse (circleX[0], circleX[1], otherMap1, otherMap1);
+
+// fill (circleCol3) 
+// stroke (64, 68, 194)
+// ellipse (circleX[0], circleX[1], otherMap2, otherMap2);
+
+// //flower/star in middle 
+// fill (circleCol4) 
+// strokeWeight(2)
+// stroke (Magenta) 
+// ellipse (circleX[0], circleX[1], vocalMap1, 20); 
+
+// fill (circleCol4) 
+// strokeWeight(2)
+// stroke (Magenta) 
+// ellipse (circleX[0], circleX[1], 20, vocalMap1);
+
   
-//   fill (circleCol3) 
-//   stroke (64, 68, 194)
-//   ellipse (circleX[0], circleX[1], otherMap2, otherMap2);
+    }
 
-//   //flower/star in middle 
-//   fill (circleCol4) 
-//   strokeWeight(2)
-//   stroke (Magenta) 
-//   ellipse (circleX[0], circleX[1], vocalMap1, 20); 
+else {
 
-//   fill (circleCol4) 
-//   strokeWeight(2)
-//   stroke (Magenta) 
-//   ellipse (circleX[0], circleX[1], 20, vocalMap1);
-    
-//       }
+}
 
-//   else {
+  
 
-//   }
+  
 
   }
 

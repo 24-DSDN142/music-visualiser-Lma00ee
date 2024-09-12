@@ -1,4 +1,4 @@
-  let img
+  let img //image load in variable 
   let firstRun = true 
   let circleX = [1336, 765] //x and y position of circles in middle of image
   let drumBeat = [700, 1250, 600, 1100, 300, 900, 220, 700] //array variables of map of drum ranges
@@ -9,9 +9,10 @@
 
 
   function draw_one_frame(words, vocal, drum, bass, other, counter) {
-    
+  
+  //preloading image   
   if (firstRun) {
-  img = loadImage ('bg img.jpg')
+  img = loadImage ('bg img.jpg') //AI generated image from Adobe Firefly https://firefly.adobe.com/ 
   firstRun = false 
   }
 
@@ -50,11 +51,11 @@
     console.log(counter)
     
 
-    //bc of opacity, darkest layer first then light?
+    //bc of opacity, darkest layer first then light...
 
-    //reverse opacity layers for strokes outer pink 
+    //reverse opacity layers for outer strokes, pink 
     //drums
-    //super outer stroke matching ring on image 
+    //super outer individual stroke matching ring on image 
     noFill()
     strokeWeight (20)
     stroke(Magenta3) 
@@ -87,7 +88,7 @@
     fill (darkPurple) 
     ellipse (circleX[0], circleX[1], bassMap2, bassMap2);
     
-  //other beat circles 
+    //other beat circles 
     fill (darkPurple1) 
     stroke (64, 68, 194)
     ellipse (circleX[0], circleX[1], otherMap1, otherMap1);
@@ -149,15 +150,16 @@
 
     }
 
-    if (counter > 9944 && 11520) {
-      circleCol = lerpColor(Magenta, darkPurple, map(counter, 100, 300, 0, 1))
-      circleCol2 = lerpColor(lightPurple1, Magenta2, map(counter, 100, 300, 0, 1))
-      circleCol3 = lerpColor(darkPurple1, Magenta2, map(counter, 100, 300, 0, 1))
-      circleCol4 = lerpColor(Magenta1, darkPurple2, map(counter, 100, 300, 0, 1))
+    if (counter >= 9944 && counter < 11520) {
+    circleCol = lerpColor(Magenta, darkPurple, map(counter, 100, 300, 0, 1))
+    circleCol2 = lerpColor(lightPurple1, Magenta2, map(counter, 100, 300, 0, 1))
+    circleCol3 = lerpColor(darkPurple1, Magenta2, map(counter, 100, 300, 0, 1))
+    circleCol4 = lerpColor(Magenta1, darkPurple2, map(counter, 100, 300, 0, 1))
 
-  //reverse opacity layers for strokes outer pink 
-  //drums
-  //super outer stroke matching ring on image 
+  
+   //reverse opacity layers for outer strokes, pink 
+   //drums
+   //super outer individual stroke matching ring on image 
   noFill()
   strokeWeight (20)
   stroke(circleCol) 
@@ -172,7 +174,6 @@
   ellipse(circleX[0], circleX[1], drumMap1+90, drumMap1+90);
 
   //purples
-
   fill (circleCol3) 
   strokeWeight (0)
   ellipse (circleX[0], circleX[1], drumMap2, drumMap2);
